@@ -1,0 +1,15 @@
+apt-get install apache2 mysql-common mysql-server php5 php5-cli php5-mysql php-pear
+pear install Cache_Lite
+pear install MDB2
+pear install MDB2_Driver_mysql
+pear upgrade mdb2-beta mdb2_driver_mysqli-beta
+
+sudo a2enmod rewrite
+
+0 0 1 1,7 * /home/jenga/nibl.co.uk/instructions/resign_pjirc  
+
+keytool -genkey -keyalg rsa -alias key
+keytool -export -alias key -file cert.crt
+jarsigner applet.jar key
+cp cert.crt ../
+cp pixx-english.lng english.lng ../

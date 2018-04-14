@@ -1,0 +1,3 @@
+#!/bin/bash
+/usr/bin/jarsigner /home/jenga/nibl.co.uk/html/pjirc/irc.jar key
+/usr/bin/jarsigner /home/jenga/nibl.co.uk/html/pjirc/pixx.jar key

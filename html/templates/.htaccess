@@ -1,0 +1,6 @@
+Options -Indexes
+
+<Files *.tpl>
+    Deny from all
+    Order deny,allow
+</Files>
