@@ -8,7 +8,7 @@ if (!is_dir($config["site_path"]))
 
 $config["site_title"]       = "nibl";
 $config["site_url"]         = "http://nibl.co.uk";
-//$config["site_url"] = "http://nibl.chippyrepair.com/nibl/";
+$config["site_api"]         = "http://niblapi";
 $config["includes_path"]    = $config["site_path"] . "_includes";
 
 $config["template_list"]    = array(
