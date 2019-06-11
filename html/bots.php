@@ -62,7 +62,7 @@ if ($botid || $botname || $search_query || $latest)
 	
 	$botnames = array();
 	// Get botlist ids -> names
-	$url = "https://api.nibl.co.uk:8080/nibl/bots";
+	$url = $config["site_api"] . "/nibl/bots";
 	$result = $api->call("GET", $url);
 	foreach( $result['content'] as $bot ){
 		$botnames[$bot['id']] = $bot['name'];
@@ -73,7 +73,7 @@ if ($botid || $botname || $search_query || $latest)
 	}
 	
 	// We either get full result from bot using /packs or use search query using /search
-	$url = "https://api.nibl.co.uk:8080/nibl";
+	$url = $config["site_api"] . "/nibl";
 	if( $botid && !$search_query ) {
 		$url .= "/packs";
 	} else if ( $latest ) {
@@ -117,7 +117,7 @@ if (isset($_REQUEST["id"]) && trim($_REQUEST["id"]) != "" && intval($_REQUEST["i
 else
 {
 
-	$result = $api->call("GET", "https://api.nibl.co.uk:8080/nibl/bots");
+    $result = $api->call("GET", $config["site_api"] . "/nibl/bots");
 	$bots_array = $result["content"];
 	
 	function cmp($a, $b)

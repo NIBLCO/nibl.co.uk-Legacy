@@ -24,13 +24,13 @@ if ($request == "botlist")
     	
     	$botnames = array();
     	// Get botlist ids -> names
-    	$url = "https://api.nibl.co.uk:8080/nibl/bots";
+    	$url = $config["site_api"] . "/nibl/bots";
     	$result = $api->call("GET", $url);
     	foreach( $result['content'] as $bot ){
     		$botnames[$bot['id']] = $bot['name'];
     	}
     	
-    	$result = $api->call("GET", "https://api.nibl.co.uk:8080/nibl/latest?size=100");
+    	$result = $api->call("GET", $config["site_api"] . "/nibl/latest?size=100");
     	$botlist_array = $result["content"];
     	
         show_template(
@@ -45,7 +45,7 @@ if ($request == "botlist")
         
     }else{
     	
-    	$result = $api->call("GET", "https://api.nibl.co.uk:8080/nibl/packs/$botid");
+        $result = $api->call("GET", $config["site_api"] . "/nibl/packs/$botid");
     	$botlist_array = $result["content"];
     	
         show_template(

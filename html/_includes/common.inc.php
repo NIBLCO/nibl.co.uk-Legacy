@@ -1,5 +1,7 @@
 <?php
 
+date_default_timezone_set("EST");
+
 $starttime = explode(" ", microtime());
 $starttime = $starttime[1] + $starttime[0];
 
